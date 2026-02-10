@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urdu High School Omerga - تعلیمی معیار کا اعلی نمونہ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57cc99;
+            --accent-color: #ffd166;
+            --dark-color: #073b4c;
+            --light-color: #f8f9fa;
+            --urdu-font: 'Noto Nastaliq Urdu', serif;
+            --english-font: 'Nunito', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--english-font);
+            color: #333;
+            line-height: 1.6;
+            direction: ltr;
+        }
+        
+        .urdu-text {
+            font-family: var(--urdu-font);
+            direction: rtl;
+            font-size: 1.1rem;
+        }
+        
+        .marathi-text {
+            font-family: var(--english-font);
+            color: #d32f2f;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-inner {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .school-name h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .school-name .urdu-text {
+            font-size: 1.4rem;
+        }
+        
+        .location-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            font-weight: 700;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(7, 59, 76, 0.8), rgba(26, 95, 122, 0.9)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero .urdu-text {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero-location {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .hero-location .marathi-text {
+            color: var(--accent-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #38b077;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title .urdu-text {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Programs Section */
+        .programs {
+            background-color: #f0f7ff;
+        }
+        
+        .programs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .program-icon {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .program-content {
+            padding: 25px;
+        }
+        
+        .program-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Facilities Section */
+        .facilities-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .facility-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .facility-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .facility-item:hover h3,
+        .facility-item:hover .urdu-text {
+            color: white;
+        }
+        
+        .facility-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .facility-item h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        /* Location Section */
+        .location {
+            background-color: #f9f9f9;
+        }
+        
+        .location-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .location-info {
+            flex: 1;
+        }
+        
+        .location-map {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            background-color: #e9e9e9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .location-map i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* News Section */
+        .news {
+            background-color: #f9f9f9;
+        }
+        
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .news-date {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 10px 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-detail i {
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .location-container {
+                flex-direction: column;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .urdu-text {
+                font-size: 1.8rem;
+            }
+            
+            .location-map {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero .urdu-text {
+                font-size: 1.5rem;
+            }
+            
+            .hero-location {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 15px;
+            }
+            
+            .school-name h1 {
+                font-size: 1.5rem;
+            }
+            
+            .school-name .urdu-text {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title .urdu-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-inner">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+                <div class="school-name">
+                    <h1>Urdu High School Omerga</h1>
+                    <div class="urdu-text">عمر گا ہائی اسکول اردو</div>
+                    <div class="location-badge">Dist- Osmanabad, Maharashtra</div>
+                </div>
+            </div>
+            
+            <nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home <span class="urdu-text">(ہوم)</span></a></li>
+                    <li><a href="#about">About <span class="urdu-text">(متعلق)</span></a></li>
+                    <li><a href="#programs">Programs <span class="urdu-text">(پروگرام)</span></a></li>
+                    <li><a href="#facilities">Facilities <span class="urdu-text">(سہولیات)</span></a></li>
+                    <li><a href="#location">Location <span class="urdu-text">(مقام)</span></a></li>
+                    <li><a href="#news">News <span class="urdu-text">(خبریں)</span></a></li>
+                    <li><a href="#contact">Contact <span class="urdu-text">(رابطہ)</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Excellence in Education</h2>
+            <div class="urdu-text">تعلیم میں اعلی معیار</div>
+            <div class="hero-location">
+                <span class="marathi-text">Omerga, Dist- Osmanabad</span> | Maharashtra State
+            </div>
+            <p>Urdu High School Omerga provides quality education with a focus on academic excellence, character building, and holistic development of students in the Osmanabad district of Maharashtra.</p>
+            <p class="urdu-text">عمر گا ہائی اسکول اردو مہاراشٹر کے عثمان آباد ضلع میں طلباء کی تعلیمی برتری، کردار سازی اور ہمہ جہت ترقی پر توجہ مرکوز کرتے ہوئے معیاری تعلیم فراہم کرتا ہے۔</p>
+            <a href="#about" class="btn">Learn More <span class="urdu-text">(مزید جانیں)</span></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our School</h2>
+                <div class="urdu-text">ہمارے اسکول کے بارے میں</div>
+                <div class="section-subtitle">Serving the Omerga community since 1975</div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in 1975, Urdu High School Omerga has been a beacon of quality education for the Urdu-speaking community in Omerga, Osmanabad district of Maharashtra. We are committed to providing an enriching learning environment that nurtures intellectual curiosity, critical thinking, and ethical values.</p>
+                    <p class="urdu-text">1975 میں قائم کیا گیا، عمر گا ہائی اسکول اردو مہاراشٹر کے عثمان آباد ضلع میں عمر گا کی اردو بولنے والی برادری کے لیے معیاری تعلیم کا مرکز رہا ہے۔ ہم ایک ایسے تعلیمی ماحول کی فراہمی کے لیے پرعزم ہیں جو فکری تجسس، تنقیدی سوچ اور اخلاقی اقدار کو پروان چڑھاتا ہے۔</p>
+                    <p>Our school follows the Maharashtra State Board curriculum with special emphasis on Urdu language and literature, Islamic studies, Marathi language, and modern sciences. We proudly serve students from diverse backgrounds in the Omerga region.</p>
+                    <p class="urdu-text">ہمارا اسکول مہاراشٹر اسٹیٹ بورڈ کے نصاب پر عمل کرتا ہے جس میں اردو زبان و ادب، اسلامیات، مراٹھی زبان اور جدید سائنسز پر خصوصی زور دیا جاتا ہے۔ ہم عمر گا خطے کے مختلف پس منظر کے طلباء کو خدمات فراہم کرنے پر فخر محسوس کرتے ہیں۔</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3" alt="Urdu High School Omerga Building">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Programs</h2>
+                <div class="urdu-text">تعلیمی پروگرام</div>
+                <div class="section-subtitle">Following Maharashtra State Board Curriculum</div>
+            </div>
+            
+            <div class="programs-container">
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="program-content">
+                        <h3>Primary Education (Std 1-5)</h3>
+                        <div class="urdu-text">ابتدائی تعلیم (معیار 1-5)</div>
+                        <p>Foundational learning with focus on literacy, numeracy, and basic sciences. Bilingual instruction in Urdu, Marathi, and English as per state board requirements.</p>
+                        <p class="urdu-text">خواندگی، عددی مہارت اور بنیادی سائنسز پر توجہ مرکوز کرتے ہوئے بنیادی سیکھنے کا عمل۔ اسٹیٹ بورڈ کی ضروریات کے مطابق اردو، مراٹھی اور انگریزی میں تین لسانی ہدایات۔</p>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="program-content">
+                        <h3>Middle School (Std 6-8)</h3>
+                        <div class="urdu-text">مڈل اسکول (معیار 6-8)</div>
+                        <p>Comprehensive curriculum with introduction to advanced subjects like Physics, Chemistry, Biology, and Computer Science as per Maharashtra State Board syllabus.</p>
+                        <p class="urdu-text">مہاراشٹر اسٹیٹ بورڈ کے نصاب کے مطابق طبیعیات، کیمسٹری، حیاتیات اور کمپیوٹر سائنس جیسے اعلی مضامین کا تعارف شامل کرتے ہوئے جامع نصاب۔</p>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="program-content">
+                        <h3>High School (Std 9-10)</h3>
+                        <div class="urdu-text">ہائی اسکول (معیار 9-10)</div>
+                        <p>SSC Preparation with optional subjects. Focus on Maharashtra State Board examinations. Special coaching for Urdu medium students in Omerga region.</p>
+                        <p class="urdu-text">اختیاری مضامین کے ساتھ ایس ایس سی کی تیاری۔ مہاراشٹر اسٹیٹ بورڈ امتحانات پر توجہ۔ عمر گا خطے کے اردو میڈیم طلباء کے لیے خصوصی کوچنگ۔</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Facilities</h2>
+                <div class="urdu-text">ہماری سہولیات</div>
+                <div class="section-subtitle">Modern infrastructure for quality education</div>
+            </div>
+            
+            <div class="facilities-container">
+                <div class="facility-item">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science Labs</h3>
+                    <div class="urdu-text">سائنس لیبارٹریز</div>
+                    <p>Well-equipped physics, chemistry, and biology laboratories for practical learning as per state board requirements.</p>
+                </div>
+                
+                <div class="facility-item">
+                    <i class="fas fa-book"></i>
+                    <h3>Library</h3>
+                    <div class="urdu-text">لائبریری</div>
+                    <p>Extensive collection of books in Urdu, Marathi, English and other languages with digital resources.</p>
+                </div>
+                
+                <div class="facility-item">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Computer Lab</h3>
+                    <div class="urdu-text">کمپیوٹر لیب</div>
+                    <p>Modern computer lab with high-speed internet and latest software for IT education.</p>
+                </div>
+                
+                <div class="facility-item">
+                    <i class="fas fa-futbol"></i>
+                    <h3>Sports Ground</h3>
+                    <div class="urdu-text">کھیلوں کا میدان</div>
+                    <p>Spacious playground for cricket, football, volleyball and traditional Indian sports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Location</h2>
+                <div class="urdu-text">ہمارا مقام</div>
+                <div class="section-subtitle">Serving Omerga, Osmanabad District, Maharashtra</div>
+            </div>
+            
+            <div class="location-container">
+                <div class="location-info">
+                    <h3>Urdu High School Omerga</h3>
+                    <div class="urdu-text">عمر گا ہائی اسکول اردو</div>
+                    
+                    <p style="margin-top: 20px; margin-bottom: 15px;"><strong>Address:</strong></p>
+                    <p>Main Road, Omerga<br>
+                    Taluka: Omerga<br>
+                    District: Osmanabad<br>
+                    State: Maharashtra<br>
+                    PIN: 413606</p>
+                    
+                    <p class="urdu-text" style="margin-top: 15px; margin-bottom: 15px;">مرکزی سڑک، عمر گا<br>
+                    تعلقہ: عمر گا<br>
+                    ضلع: عثمان آباد<br>
+                    ریاست: مہاراشٹر<br>
+                    پن کوڈ: 413606</p>
+                    
+                    <p style="margin-top: 20px;"><strong>About Omerga:</strong> Omerga is a town in Osmanabad district of Maharashtra state. It is known for its educational institutions and serves as an important educational hub for the surrounding rural areas. The town has a significant Urdu-speaking population along with Marathi, Hindi, and Kannada speakers.</p>
+                </div>
+                
+                <div class="location-map">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Omerga, Osmanabad</h3>
+                    <p>Maharashtra State, India</p>
+                    <div class="urdu-text" style="margin-top: 10px;">عمر گا، عثمان آباد</div>
+                    <p style="margin-top: 15px;">Located in the Marathwada region of Maharashtra, our school serves students from Omerga and surrounding villages in Osmanabad district.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>School News & Events</h2>
+                <div class="urdu-text">اسکول کی خبریں اور تقریبات</div>
+                <div class="section-subtitle">Latest updates from Urdu High School Omerga</div>
+            </div>
+            
+            <div class="news-container">
+                <div class="news-item">
+                    <div class="news-date">15 June 2023</div>
+                    <div class="news-content">
+                        <h3>SSC Results 2023</h3>
+                        <div class="urdu-text">ایس ایس سی نتائج 2023</div>
+                        <p>Maharashtra State Board SSC examination results have been announced. Our students achieved 96% pass rate with 42 distinctions in Urdu medium.</p>
+                        <p class="urdu-text">مہاراشٹر اسٹیٹ بورڈ ایس ایس سی امتحانات کے نتائج کا اعلان کر دیا گیا ہے۔ ہمارے طلباء نے اردو میڈیم میں 42 امتیازات کے ساتھ 96 فیصد پاس ریٹ حاصل کیا۔</p>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-date">5 July 2023</div>
+                    <div class="news-content">
+                        <h3>Admissions Open 2023-24</h3>
+                        <div class="urdu-text">داخلے کھل گئے ہیں 2023-24</div>
+                        <p>Admissions for the academic year 2023-24 are now open. Limited seats available in all classes (Std 1 to 10). Apply before 30th July.</p>
+                        <p class="urdu-text">تعلیمی سال 2023-24 کے لیے داخلے کھل گئے ہیں۔ تمام جماعتوں (معیار 1 سے 10) میں محدود سیٹیں دستیاب ہیں۔ 30 جولائی سے پہلے درخواست دیں۔</p>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-date">20 August 2023</div>
+                    <div class="news-content">
+                        <h3>Independence Day Celebration</h3>
+                        <div class="urdu-text">یوم آزادی کی تقریب</div>
+                        <p>Independence Day will be celebrated on 15th August with flag hoisting, cultural programs, and patriotic songs in Urdu, Marathi and Hindi.</p>
+                        <p class="urdu-text">یوم آزادی 15 اگست کو جھنڈا کشائی، ثقافتی پروگراموں اور اردو، مراٹھی اور ہندی میں حب الوطنی کے گیتوں کے ساتھ منایا جائے گا۔</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <div class="urdu-text">ہم سے رابطہ کریں</div>
+                <div class="section-subtitle">Visit us in Omerga, Osmanabad</div>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="urdu-text">رابطہ کریں</div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Urdu High School Omerga<br>
+                            Main Road, Omerga<br>
+                            Dist- Osmanabad, Maharashtra 413606</p>
+                            <p class="urdu-text">عمر گا ہائی اسکول اردو<br>
+                            مرکزی سڑک، عمر گا<br>
+                            ضلع عثمان آباد، مہاراشٹر 413606</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 2471 123456 (Office)</p>
+                            <p>+91 2471 654321 (Principal)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@urduhighschoolomerga.edu.in</p>
+                            <p>principal@urduhighschoolomerga.edu.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>School Hours</h4>
+                            <p>Monday to Saturday: 8:00 AM - 3:00 PM</p>
+                            <p>Office Hours: 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <div class="urdu-text">پیغام بھیجیں</div>
+                    
+                    <form id="contactForm">
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: var(--english-font);" required>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: var(--english-font);" required>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <input type="tel" placeholder="Your Phone Number" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: var(--english-font);">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <select style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: var(--english-font);">
+                                <option value="">Select Subject</option>
+                                <option value="admission">Admission Inquiry</option>
+                                <option value="general">General Information</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: var(--english-font);" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message <span class="urdu-text">(پیغام بھیجیں)</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h3>Urdu High School Omerga</h3>
+                    <div class="urdu-text">عمر گا ہائی اسکول اردو</div>
+                    <div class="marathi-text" style="margin: 10px 0; font-size: 1rem;">ऊस्मानाबाद जिल्हा, महाराष्ट्र</div>
+                    <p>Providing quality Urdu-medium education in Omerga, Osmanabad since 1975. Committed to academic excellence and holistic development of students.</p>
+                    <p class="urdu-text">1975 سے عمر گا، عثمان آباد میں معیاری اردو میڈیم تعلیم فراہم کر رہے ہیں۔ تعلیمی برتری اور طلباء کی ہمہ جہت ترقی کے لیے پرعزم۔</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Academic Programs</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#location">Location</a></li>
+                        <li><a href="#news">News & Events</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Main Road, Omerga, Dist- Osmanabad, Maharashtra</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +91 2471 123456</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@urduhighschoolomerga.edu.in</p>
+                    
+                    <div style="margin-top: 20px;">
+                        <h4>Follow Us</h4>
+                        <div style="display: flex; gap: 15px; margin-top: 10px;">
+                            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Urdu High School Omerga, Osmanabad, Maharashtra. All Rights Reserved.</p>
+                <p class="urdu-text">© 2023 عمر گا ہائی اسکول اردو، عثمان آباد، مہاراشٹر۔ جملہ حقوق محفوظ ہیں۔</p>
+                <p class="marathi-text" style="margin-top: 10px;">© २०२३ उर्दू हायस्कूल ओमरगा, उस्मानाबाद, महाराष्ट्र. सर्व हक्क राखीव.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight Omerga location
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Urdu High School Omerga Website Loaded");
+            console.log("Location: Omerga, Dist- Osmanabad, State- Maharashtra");
+        });
+    </script>
+</body>
+</html>
